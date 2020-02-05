@@ -1,15 +1,11 @@
-﻿using AllNotesFront.Helpers;
-using AllNotesFront.Models;
-using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace AllNotesFront.Services
 {
-    public class ScheduleServices
+    public class NoteServices
     {
         private HttpClient _schedule { get; }
 
