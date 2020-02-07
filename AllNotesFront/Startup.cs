@@ -26,6 +26,8 @@ namespace AllNotesFront
         {
             services.AddControllersWithViews();
             services.AddHttpClient<ScheduleServices>();
+            services.AddHttpClient<UserServices>();
+            //services.AddHttpClient<ScheduleServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,7 +55,7 @@ namespace AllNotesFront
                 endpoints.MapControllerRoute(
                     name: "default",
                     //pattern: "{controller=Home}/{action=Index}/{id?}");
-                    pattern: "{controller=Schedule}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

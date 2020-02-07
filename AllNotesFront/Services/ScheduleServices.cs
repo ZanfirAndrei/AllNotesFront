@@ -15,8 +15,8 @@ namespace AllNotesFront.Services
 
         public ScheduleServices(HttpClient schedule)
         {
-            schedule.BaseAddress = HttpClientHelper.GetCustomUri("schedule");
-            this._schedule = schedule;
+            //schedule.BaseAddress = HttpClientHelper.GetCustomUri("schedule");
+            this._schedule = HttpClientHelper.GetClient(schedule, "schedule");
 
         }
 

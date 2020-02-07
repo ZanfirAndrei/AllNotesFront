@@ -22,6 +22,7 @@ namespace AllNotesFront.Controllers
 
         public async Task<IActionResult> Index()
         {
+            
             var result = await _scheduleservices.GetAllAsync();
             ViewBag.Data = result;
 
