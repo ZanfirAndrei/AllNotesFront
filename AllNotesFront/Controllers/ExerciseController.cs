@@ -20,12 +20,12 @@ namespace AllNotesFront.Controllers
             this._exerciseServices = exerciseServices;
         }
 
-        public async Task<IActionResult> Index()
-        {
-            var result = await _exerciseServices.GetAllAsync();
-            ViewBag.Data = result;
+        //public async Task<IActionResult> Index()
+        //{
+        //    var result = await _exerciseServices.GetAllAsync();
+        //    ViewBag.Data = result;
 
-            return View();
-        }
+        //    return View();
+        //}
     }
 }

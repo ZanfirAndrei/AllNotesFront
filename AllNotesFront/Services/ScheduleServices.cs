@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace AllNotesFront.Services
@@ -27,6 +28,19 @@ namespace AllNotesFront.Services
             var stringContent = await content.ReadAsStringAsync();
             var result = JsonConvert.DeserializeObject<IList<ScheduleViewModel>>(stringContent);
             return result;
+        }
+
+        public async Task<string> CreateAsync(string schedule)
+        {
+            string data = JsonConvert.SerializeObject(schedule);
+            StringContent content = new StringContent(data, Encoding.UTF8, "application/json");
+            var response = string.Empty;
+            var result = await _schedule.PostAsync("AddSchedule", content);
+            if (result.IsSuccessStatusCode)
+            {
+                response = result.StatusCode.ToString();
+            }
+            return response;
         }
     }
 }

@@ -27,6 +27,31 @@ namespace AllNotesFront.Controllers
 
             return View();
         }
+
+        public async Task<ViewResult> Add()
+        {
+            //string schedule = "2020-02-08 00:00:00.000";
+            //var result = await _scheduleservices.CreateAsync(schedule);
+            //ViewBag.Data = result;
+
+            return View();
+        }
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(string date)
+        {
+            //string schedule = "2020-02-08 00:00:00.000";
+            var result = await _scheduleservices.CreateAsync(date);
+
+            return View("Index");
+        }
+
+
         //// GET: Schedule
         //public ActionResult Index()
         //{
